@@ -21,7 +21,7 @@ class Module extends \yii\base\Module
             $this->controllerNamespace = 'app\modules\forum\commands';
         }
 
-        // 开放服务
+        // 开放类服务
         Yii::$container->set('forum.UserService', 'app\modules\forum\services\UserService');
 
         // 开放方法服务

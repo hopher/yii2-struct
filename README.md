@@ -66,7 +66,7 @@
 在 Module 中，通过 IOC注入，不用直接调用方法
 
 ```
-// 开放服务
+// 开放类服务
 Yii::$container->set('forum.UserService', 'app\modules\forum\services\UserService');
 
 // 开放方法服务
