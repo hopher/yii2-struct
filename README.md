@@ -8,6 +8,8 @@
 |-- models      模型
 |-- repositories 仓储
 |-- services    服务层
+|-- config.php 模块配置文件
+|-- views 视图文件
 ```
 
 ![img](yii2-struct.png)
