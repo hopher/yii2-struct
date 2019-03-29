@@ -61,6 +61,20 @@
 ]
 ```
 
+## 模块之间功能调用
+
+在 Module 中，通过 IOC注入，不用直接调用方法
+
+```
+// 开放服务
+Yii::$container->set('forum.UserService', 'app\modules\forum\services\UserService');
+
+// 开放方法服务
+Yii::$container->set('forum.UserService.getUserInfo', function($container, $params, $config) {
+    return call_user_func_array([Yii::$container->get('app\modules\forum\services\UserService'), 'getUserInfo'], $params);
+});    
+```
+
 ## 参考资料
 - [YII2 模块](https://www.yiichina.com/doc/guide/2.0/structure-modules)
 - [Laravel 的中大型專案架構](https://oomusou.io/laravel/architecture/)

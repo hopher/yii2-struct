@@ -21,6 +21,14 @@ class Module extends \yii\base\Module
             $this->controllerNamespace = 'app\modules\forum\commands';
         }
 
+        // 开放服务
+        Yii::$container->set('forum.UserService', 'app\modules\forum\services\UserService');
+
+        // 开放方法服务
+        Yii::$container->set('forum.UserService.getUserInfo', function($container, $params, $config) {
+            return call_user_func_array([Yii::$container->get('app\modules\forum\services\UserService'), 'getUserInfo'], $params);
+        });         
+
     }
 
 }

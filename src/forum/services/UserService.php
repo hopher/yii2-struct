@@ -22,4 +22,10 @@ class UserService
         return call_user_func_array([$this->userRepository, $method], $args);
     }
 
+
+    public function getUserInfo()
+    {
+        return "GetUserInfo Test";
+    }
+
 }
